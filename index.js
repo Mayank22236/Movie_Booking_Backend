@@ -25,7 +25,7 @@ app.use(express.json())
 app.use(express.urlencoded())
 
 mongoose
-.connect('mongodb://127.0.0.1:27017/BMS')
+.connect('mongodb+srv://mayank22236:Iudz0N2CY749srNU@cluster0.lahvc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => console.log('Connected to MongoDB'))
 .catch((err) => { 
     console.log(err);
