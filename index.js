@@ -13,6 +13,17 @@ const showRoutes = require('./routes/showRoutes');
 const bookingRoutes = require('./routes/bookingRoute');
 
 
+const corsOptions = {
+    origin: ["http://localhost:3000", "write here"],
+    optionsSuccessStatus: 200,
+    credentials: true, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+  app.use(cors(corsOptions));
+
+
+app.use(express.json())
+app.use(express.urlencoded())
+
 mongoose
 .connect('mongodb://127.0.0.1:27017/BMS')
 .then(() => console.log('Connected to MongoDB'))
@@ -20,9 +31,7 @@ mongoose
     console.log(err);
 });
 
-app.use(cors());
-app.use(express.json())
-app.use(express.urlencoded())
+//app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('Hello World');
