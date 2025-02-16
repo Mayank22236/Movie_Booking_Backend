@@ -23,6 +23,10 @@ mongoose
 app.use(express.json())
 app.use(express.urlencoded())
 
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
 app.use('/api/users', userRoutes);
 app.use('/api/theatres', theatreRoutes);
 app.use('/api/movies', movieRoutes);
