@@ -14,7 +14,7 @@ const bookingRoutes = require('./routes/bookingRoute');
 
 
 const corsOptions = {
-    origin: ["http://localhost:3000", "write here"],
+    origin: ["http://localhost:3000", "https://movie-booking-fe.vercel.app"],
     optionsSuccessStatus: 200,
     credentials: true, // some legacy browsers (IE11, various SmartTVs) choke on 204
   };
